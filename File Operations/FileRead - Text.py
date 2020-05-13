@@ -2,66 +2,84 @@
 #    File Operations - Read Text File
 # ------------------------------------------------------------------------------
 
+# ------------------------------------------------------------------------------
+# Small Files:      f.read()                  ---> Read entire content and print
+# ------------------------------------------------------------------------------
+# with open("original.txt", "r") as f:
+#     f_contents = f.read()
+#     print(f_contents)
+
+
 
 # ------------------------------------------------------------------------------
-#   File Operations
-#                         1. File read      [open() function]
+#           f.readline()                            ---> Read one line at a time
 # ------------------------------------------------------------------------------
-# file_handler = open(r'C:\Users\Sukumar Paul\Desktop\UDEMY_Python_MasterClass\CoreyVideo\original.txt', 'r')
+# with open("original.txt", "r") as f:
+#     f_contents = f.readline()
+#     print(f_contents, end='')
 #
-# for line in file_handler:
-#     print(line)
-#
-# file_handler.close()
-
-
-# ------------------------------------------------------------------------------
-#   File Operations -
-#                         2. Conditional File read      [open() function]
-# ------------------------------------------------------------------------------
-# file_handler = open(r'C:\Users\Sukumar Paul\Desktop\UDEMY_Python_MasterClass\CoreyVideo\original.txt', 'r')
-#
-# for line in file_handler:
-#     if "thought" in line.lower():
-#         print(line, end ='')
-#
-# file_handler.close()
-
-
-# ------------------------------------------------------------------------------
-#   File Operations -
-#                         3. With Open <> as File_handler
-# ------------------------------------------------------------------------------
-# with open("original.txt", "r") as file_handler:
-#     for line in file_handler:
-#         if "thought" in line.lower():
-#             print(line, end ='')
+#     f_contents = f.readline()
+#     print(f_contents, end='')
 
 
 
 # ------------------------------------------------------------------------------
-#   File Operations -
-#                         4. file.readline()        # Read one line at a time
+#  Big Files:      f.readlines()       ---> Read entire file and store in a list
 # ------------------------------------------------------------------------------
-# with open("original.txt", "r") as file_handler:
-#     line = file_handler.readline()
-#     while line:
+# with open("original.txt", "r") as f:
+#     f_contents = f.readlines()
+#     print(f_contents)
+
+
+
+# ------------------------------------------------------------------------------
+#  ******     For Extremely Large File  *******
+#                USE THIS METHOD
+# This is efficient for extremely large file.
+# ------------------------------------------------------------------------------
+# with open("original.txt", "r") as f:
+#     for line in f:
 #         print(line, end='')
-#         line = file_handler.readline()
-
+#
 
 
 # ------------------------------------------------------------------------------
-#   File Operations -
-#                         5. file.readlines()   # Read the entire file at one go
+#  ******     For Extremely Large File  *******
+#                USE THIS METHOD
+#             Read a chunk of file at a time
+# This is another way to read extremely large file.
 # ------------------------------------------------------------------------------
-with open("original.txt", "r") as file_handler:
-    # Read the entire file at one go and put each line in the return list
-    # BE CAREFUL - If the FILE is VERY LARGE
-    # DON'T USE THIS METHOD FOR LARGE FILE
-    lines = file_handler.readlines()
-print(lines)
+# with open("original.txt", "r") as f:
+#     size_to_read = 10
+#
+#     f_contents = f.read(size_to_read)
+#
+#     while(len(f_contents) > 0):
+#         print(f_contents, end='')
+#         f_contents = f.read(size_to_read)
 
-for line in lines:
-    print(line, end='')
 
+# ------------------------------------------------------------------------------
+#           f.tell()                          ---> Current File Pointer position
+# ------------------------------------------------------------------------------
+# with open("original.txt", "r") as f:
+#     size_to_read = 10
+#     f_contents = f.read(size_to_read)
+#
+#     print(f.tell())
+
+
+# ------------------------------------------------------------------------------
+#           f.seek()                          ---> Change File Pointer Position
+# ------------------------------------------------------------------------------
+with open("original.txt", "r") as f:
+    size_to_read = 10
+
+    f_contents = f.read(size_to_read)
+    print(f_contents, end='*')
+
+    # This helps the file pointer to go back to starting of the file
+    f.seek(0)
+
+    f_contents = f.read(size_to_read)
+    print(f_contents, end='')
