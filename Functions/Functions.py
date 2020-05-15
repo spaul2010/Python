@@ -58,6 +58,25 @@
 # student_info('Math', 'Art', name='John', age=22)
 
 
+
+# ------------------------------------------------------------------------------
+#    Function parameters -   *args
+# ------------------------------------------------------------------------------
+# def python_food(*args):
+#     print(args)
+#
+#     text = ''
+#     for arg in args:
+#         text += str(arg) + ' '
+#     print("Final Text = {}".format(text))
+#
+# python_food('Spam')
+# python_food('Spam', 'Eggs')
+# python_food('Spam', 'Eggs', 'Helis')
+# python_food('Spam', 'Eggs', 'Helis', 'Fodis')
+# python_food('Spam', 'Eggs', 3, 'Helis', 4, 'Fodis')
+
+
 # ------------------------------------------------------------------------------
 #    Function parameters -   *args, **kwargs
 # ------------------------------------------------------------------------------
