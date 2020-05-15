@@ -43,3 +43,9 @@ print('-'*80)
 print(Hamilton.on)
 Hamilton.switch_on()
 print(Hamilton.on)
+print('-'*80)
+
+
+print(Kettle.__dict__)
+print(Kenwood.__dict__)
+print(Hamilton.__dict__)
