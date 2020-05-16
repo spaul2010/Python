@@ -93,11 +93,4 @@ name = 'Sukumar'
 message = '{}, {}. Welcome!'.format(greeting, name)
 print(message)
 
-# Python 3.6 and above version has new method - f string
-greeting = 'Hello'
-name = 'Sukumar'
-message = f'{greeting}, {name.upper()}. Welcome!'
-print(message)
 
-# See all available methods for name
-print(dir(name))
