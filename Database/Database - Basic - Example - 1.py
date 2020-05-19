@@ -34,5 +34,8 @@ for name, phone, email in cursor:
     print(phone)
     print(email)
 
+cursor.close()
+# Commit the changes
+db.commit()
 # Close the database connection
 db.close()
